@@ -1,4 +1,5 @@
 import {bootstrapCameraKit} from "@snap/camera-kit";
+import { privacyText } from './privacy-text.ts';
 (async function (){
   const cameraKit = await bootstrapCameraKit ({
 apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzY1Nzk3ODc3LCJzdWIiOiIxZGNiNTc5Ny1lMjVlLTQxMzctOTUwMS1iMDVmMTliMTBmMjZ-U1RBR0lOR345YmYxOGMzOS05MGQ4LTRiOGMtOTkwMS1lZTRlYWYzY2NjNmUifQ.QfyZVF_WYrAmhQhAKx0Bj_i2fb-Y86FctyiBDy-PVBY'
@@ -35,6 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const close = document.getElementById('closeBtn');
 
   if (!popup || !btn || !close) return;
+
+  const textDiv = document.querySelector('.popup-text') as HTMLElement;
+  if (textDiv) {
+    textDiv.innerHTML = privacyText;
+  }
 
   const togglePopup = (open: boolean) => {
     popup.classList.toggle('hidden', !open);
