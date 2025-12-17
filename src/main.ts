@@ -18,15 +18,37 @@ const mediaStream = await navigator.mediaDevices.getUserMedia({
  } 
 })
 
+
+
 await session.setSource(mediaStream);
 await session.play();
 
 const lens = await cameraKit.lensRepository.loadLens('f5e4a493-a928-4eff-88ee-f3f7661b0a8b','9b9f5fbd-8bbe-477a-9e07-e2009d88c232');
 await session.applyLens(lens);
 
-
-
-
 }) ();
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('helpPopup');
+  const btn = document.getElementById('helpButton');
+  const close = document.getElementById('closeBtn');
+
+  if (!popup || !btn || !close) return;
+
+  const togglePopup = (open: boolean) => {
+    popup.classList.toggle('hidden', !open);
+    const url = new URL(window.location.href);
+    open ? url.searchParams.set('privacypolicy', '') : url.searchParams.delete('privacypolicy');
+    history.pushState({popup: open}, '', url);
+  };
+
+  btn.onclick = () => togglePopup(true);
+  close.onclick = () => togglePopup(false);
+  popup.onclick = e => e.target === popup && togglePopup(false);
+
+  if (new URL(window.location.href).searchParams.has('privacypolicy'))
+    togglePopup(true);
+
+  window.onpopstate = () => togglePopup(new URL(window.location.href).searchParams.has('privacypolicy'));
+});
