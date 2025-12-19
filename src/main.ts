@@ -2,7 +2,7 @@ import {bootstrapCameraKit} from "@snap/camera-kit";
 import { privacyText } from './privacy-text.ts';
 (async function (){
   const cameraKit = await bootstrapCameraKit ({
-apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzY1Nzk3ODc3LCJzdWIiOiIxZGNiNTc5Ny1lMjVlLTQxMzctOTUwMS1iMDVmMTliMTBmMjZ-U1RBR0lOR345YmYxOGMzOS05MGQ4LTRiOGMtOTkwMS1lZTRlYWYzY2NjNmUifQ.QfyZVF_WYrAmhQhAKx0Bj_i2fb-Y86FctyiBDy-PVBY'
+apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzY2MTQyMTU3LCJzdWIiOiI3M2JlNzJlZS1mOGNiLTQyYTYtYTYyZC05YzU4NGQ2Yzc2NTl-U1RBR0lOR35hYjQ3ZTJkZi04MjY0LTRhMjAtYjUxZi1iZDM2OTg4Zjg5M2UifQ.0O20FX1uv750Rkkw-Gt_uJY3wE_zrvGO-d9SDOgcTSQ'
   });
 
 const liveRenderTarget = document.getElementById('canvas') as HTMLCanvasElement;
@@ -24,7 +24,7 @@ const mediaStream = await navigator.mediaDevices.getUserMedia({
 await session.setSource(mediaStream);
 await session.play();
 
-const lens = await cameraKit.lensRepository.loadLens('f5e4a493-a928-4eff-88ee-f3f7661b0a8b','9b9f5fbd-8bbe-477a-9e07-e2009d88c232');
+const lens = await cameraKit.lensRepository.loadLens('cf5f8505-c352-40f6-97f9-619a622257fd','9122a956-8499-4e8c-9405-b8a4360c9a94');
 await session.applyLens(lens);
 
 }) ();
