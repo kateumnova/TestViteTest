@@ -2,7 +2,7 @@ import {bootstrapCameraKit} from "@snap/camera-kit";
 import { privacyText } from './privacy-text.ts';
 (async function (){
   const cameraKit = await bootstrapCameraKit ({
-apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzY2MTQyMTU3LCJzdWIiOiI3M2JlNzJlZS1mOGNiLTQyYTYtYTYyZC05YzU4NGQ2Yzc2NTl-U1RBR0lOR35hYjQ3ZTJkZi04MjY0LTRhMjAtYjUxZi1iZDM2OTg4Zjg5M2UifQ.0O20FX1uv750Rkkw-Gt_uJY3wE_zrvGO-d9SDOgcTSQ'
+apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzY2MTQyMTU3LCJzdWIiOiI3M2JlNzJlZS1mOGNiLTQyYTYtYTYyZC05YzU4NGQ2Yzc2NTl-UFJPRFVDVElPTn4xMjAwNWE0OS0wNTg5LTRjZjUtYjA4ZC1iMGM5Yjc3ZmMwY2IifQ.6DMUhe19UfDOgZ-AuMJhSNYjH80hhS91ZHyqzax571Q'
   });
 
 const liveRenderTarget = document.getElementById('canvas') as HTMLCanvasElement;
